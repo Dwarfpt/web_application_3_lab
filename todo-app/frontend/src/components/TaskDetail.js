@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import EmailForm from './EmailForm';
 
 const TaskDetail = () => {
   const { id } = useParams();
@@ -8,6 +9,7 @@ const TaskDetail = () => {
   const [task, setTask] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showEmailForm, setShowEmailForm] = useState(false);
 
   useEffect(() => {
     const fetchTask = async () => {
@@ -54,9 +56,21 @@ const TaskDetail = () => {
         <div className="task-actions">
           <Link to="/" className="btn btn-secondary">Back to List</Link>
           <Link to={`/task/${task.id}`} className="btn btn-warning">Edit</Link>
+          <button onClick={() => setShowEmailForm(true)} className="btn btn-info">Email</button>
           <button onClick={handleDelete} className="btn btn-danger">Delete</button>
         </div>
       </div>
+      {showEmailForm && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <EmailForm 
+              taskId={task.id} 
+              taskTitle={task.title}
+              onClose={() => setShowEmailForm(false)} 
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

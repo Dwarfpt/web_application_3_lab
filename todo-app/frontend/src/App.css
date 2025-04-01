@@ -44,17 +44,35 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 15px;
     padding: 15px;
-    border-bottom: 1px solid #eee;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
   }
   
   .task-item:last-child {
     border-bottom: none;
   }
   
+  .task-info {
+    flex-grow: 1;
+  }
+  
   .task-actions {
     display: flex;
     gap: 10px;
+  }
+  
+  .task-actions .btn {
+    padding: 6px 12px;
+  }
+  
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
   }
   
   .btn {
@@ -105,4 +123,92 @@
   .error {
     color: #dc3545;
     margin: 15px 0;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .email-form h3 {
+    margin-bottom: 20px;
+  }
+  
+  .success-message {
+    color: #28a745;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .btn-info {
+    background-color: #17a2b8;
+    color: white;
+  }
+  
+  /* Стили для модального окна большего размера */
+  .modal-lg {
+    max-width: 800px;
+  }
+  
+  /* Стили для строки кнопок */
+  .button-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Стили для списка писем */
+  .email-list {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  /* Стили для элементов протокола */
+  .protocol-selector {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .protocol-selector label {
+    margin-right: 10px;
+  }
+  
+  .status-pending {
+    background-color: #ffc107;
+    color: #212529;
+  }
+  
+  .status-completed {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .status-in-progress {
+    background-color: #17a2b8;
+    color: white;
+  }
+  
+  .status {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
   }

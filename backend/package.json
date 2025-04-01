@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "node-pop3": "^0.9.0"
+  }
+}
